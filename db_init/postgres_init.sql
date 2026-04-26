@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS transactions (
+    id SERIAL PRIMARY KEY,
+    order_id INT UNIQUE NOT NULL,
+    customer VARCHAR(100),
+    amount DECIMAL(10,2),
+    synced_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

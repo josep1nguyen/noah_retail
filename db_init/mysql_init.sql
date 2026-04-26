@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS Products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sku VARCHAR(50) UNIQUE NOT NULL,
+    name VARCHAR(200),
+    stock INT DEFAULT 0,
+    warehouse VARCHAR(10)
+);
+
+CREATE TABLE IF NOT EXISTS Orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer VARCHAR(100),
+    product_sku VARCHAR(50),
+    amount DECIMAL(10,2),
+    status VARCHAR(20) DEFAULT 'PENDING',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
